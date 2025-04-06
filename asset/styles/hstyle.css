@@ -1,0 +1,265 @@
+/* ===== VARIABLES ===== */
+:root {
+    --primary: #A30505;
+    --primary-dark: #3D0202;
+    --white: #FFFFFF;
+    --gray-light: #D9D9D9;
+    --gray-medium: #AAAAAA;
+    --text-dark: #333333;
+}
+
+/* ===== BASE STYLES ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+}
+
+/* ===== NAVBAR ===== */
+.hymn-nav {
+    background: linear-gradient(to right, var(--primary-dark), var(--primary));
+    padding: 1rem 2rem;
+    color: var(--white);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hymn-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.hymn-search {
+    display: flex;
+}
+
+.search-input {
+    padding: 0.6rem 1rem;
+    border: none;
+    border-radius: 6px;
+    min-width: 250px;
+}
+
+/* ===== LAYOUT ===== */
+.hymn-container {
+    display: flex;
+    min-height: calc(100vh - 72px);
+}
+
+/* ===== SIDEBAR ===== */
+.hymn-sidebar {
+    width: 220px;
+    background-color: var(--primary);
+    padding: 2rem 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-btn {
+    color: var(--white);
+    text-decoration: none;
+    padding: 0.8rem 1.5rem;
+    margin: 0.5rem 0;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.sidebar-btn:hover, .sidebar-btn.active {
+    background-color: var(--primary-dark);
+    /* border-left: 4px solid var(--white); */
+}
+
+/* ===== MAIN CONTENT ===== */
+.hymn-content {
+    flex: 1;
+    padding: 2rem 3rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* ===== HYMN STYLING ===== */
+.hymn-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.hymn-type {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+}
+
+.hymn-meta {
+    font-size: 1rem;
+    color: var(--gray-medium);
+    margin-bottom: 0.5rem;
+}
+
+.hymn-name {
+    font-size: 1.8rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.hymn-stanzas {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.stanza {
+    background-color: var(--gray-light);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.stanza-number {
+    font-weight: 700;
+    margin-right: 0.5rem;
+}
+
+/* ===== COMMENTS SECTION ===== */
+.comment-section {
+    margin-top: 4rem;
+}
+
+.comment-form {
+    background-color: var(--gray-light);
+    border: 2px solid var(--primary);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.user-avatar, .commenter-avatar {
+    width: 50px;
+    height: 50px;
+    background-color: var(--primary-dark);
+    border-radius: 50%;
+    margin-right: 1rem;
+}
+
+.comment-email {
+    width: 100%;
+    padding: 0.8rem;
+    margin: 1rem 0;
+    border: 1px solid var(--gray-medium);
+    border-radius: 6px;
+}
+
+textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid var(--gray-medium);
+    border-radius: 6px;
+    resize: vertical;
+    margin-bottom: 1rem;
+}
+
+.submit-btn {
+    background-color: var(--primary);
+    color: var(--white);
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: var(--primary-dark);
+}
+
+.comment-card {
+    display: flex;
+    background-color: var(--gray-light);
+    border: 2px solid var(--primary);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.commenter-name {
+    font-weight: 700;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.load-more {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    background: transparent;
+    border: 2px dashed var(--primary);
+    border-radius: 8px;
+    font-weight: 600;
+    color: var(--primary);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.load-more:hover {
+    background-color: var(--gray-light);
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 900px) {
+    .hymn-container {
+        flex-direction: column;
+    }
+    
+    .hymn-sidebar {
+        width: 100%;
+        padding: 1rem;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+    
+    .sidebar-btn {
+        padding: 0.6rem 1rem;
+        margin: 0;
+        border-radius: 6px;
+    }
+    
+    .hymn-content {
+        padding: 2rem;
+    }
+    
+    .hymn-stanzas {
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .hymn-search {
+        width: 100%;
+    }
+    
+    .search-input {
+        width: 100%;
+    }
+}
